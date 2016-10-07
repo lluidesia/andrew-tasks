@@ -1,4 +1,3 @@
-
 print("*"*47)
 print("*"*3+" "*15+"Greetings!"+" "*16+"*"*3)
 print("*"*3+" "*4+"Just a test app that prints title"+" "*4+"*"*3)
@@ -22,5 +21,3 @@ elif sleep_difference<0:
 elif sleep_difference>0:
 	print("Your sleep differens with normal sleep time is %.1f days a year." %sleep_difference)
 	print("You like to sleep Lazy Ass, aren't you?")
-
-#print(sleep_average)
