@@ -41,9 +41,10 @@ def game():
 
 def show_results():
     c.execute('SELECT * from people')
-    if len(c.fetchall()) <= 0:
+    rows = c.fetchall()
+    if len(rows) <= 0:
         print("No results yet")
-    for row in c.execute('SELECT * from people'):
+    for row in rows:
         print("User: {}, Time: {}".format(row[0], row[1]))
 
 
