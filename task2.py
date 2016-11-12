@@ -35,21 +35,21 @@ def game():
     print("You spent " + result)
     player_name = input("Enter your name: ", )
 
-    c.execute("INSERT INTO People VALUES (?, ?)", (player_name, result))
+    c.execute("INSERT INTO people VALUES (?, ?)", (player_name, time_spent))
     conn.commit()
 
 
 def show_results():
-    c.execute('SELECT * from People')
+    c.execute('SELECT * from people')
     if len(c.fetchall()) <= 0:
         print("No results yet")
-    for row in c.execute('SELECT * from People'):
-        print(row)
+    for row in c.execute('SELECT * from people'):
+        print("User: {}, Time: {}".format(row[0], row[1]))
 
 
 conn = sqlite3.connect('leaderboard.db')
 c = conn.cursor()
-c.execute("CREATE TABLE if not exists People (Name, Result)")
+c.execute("CREATE TABLE if not exists people (name, result)")
 
 menu_item = 0
 
